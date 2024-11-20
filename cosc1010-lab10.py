@@ -46,7 +46,6 @@ try:
     rockyou = Path('rockyou.txt')
     pws = rockyou.read_text()
     pw_list = pws.split('\n')
-    pw_list = pws.split('\n')
     hash_list = []
     for pw in pw_list:
         hash_list.append(get_hash(pw))
