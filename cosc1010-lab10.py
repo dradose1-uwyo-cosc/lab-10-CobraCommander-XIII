@@ -42,20 +42,29 @@ def get_hash(to_hash):
 # - When you find the match, print the plaintext version of the password.
 # - End your loop.
 
-rockyou = Path('rockyou.txt')
-pws = rockyou.read_text()
-pw_list = pws.split('\n')
-pw_list = pws.split('\n')
-hash_list = []
-for pw in pw_list:
-    hash_list.append(get_hash(pw))
+try:
+    rockyou = Path('rockyou.txt')
+    pws = rockyou.read_text()
+    pw_list = pws.split('\n')
+    pw_list = pws.split('\n')
+    hash_list = []
+    for pw in pw_list:
+        hash_list.append(get_hash(pw))
+except:
+    print("File 'rockyou.txt' not found.")
 
-hash_path = Path('hash')
-hash_val = hash_path.read_text()
+try:
+    hash_path = Path('hash')
+    hash_val = hash_path.read_text()
+except:
+    print:("File 'hash' not found.")
 
-for i in range(0,len(hash_list)):
-    if hash_list[i] == hash_val:
-        print(pw_list[i])
-        break
-    else:
-        pass
+try:
+    for i in range(0,len(hash_list)):
+        if hash_list[i] == hash_val:
+            print(pw_list[i])
+            break
+        else:
+            pass
+except:
+    print("Hash value not available.")
