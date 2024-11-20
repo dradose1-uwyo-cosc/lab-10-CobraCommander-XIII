@@ -45,3 +45,17 @@ def get_hash(to_hash):
 rockyou = Path('rockyou.txt')
 pws = rockyou.read_text()
 pw_list = pws.split('\n')
+pw_list = pws.split('\n')
+hash_list = []
+for pw in pw_list:
+    hash_list.append(get_hash(pw))
+
+hash_path = Path('hash')
+hash_val = hash_path.read_text()
+
+for i in range(0,len(hash_list)):
+    if hash_list[i] == hash_val:
+        print(pw_list[i])
+        break
+    else:
+        pass
