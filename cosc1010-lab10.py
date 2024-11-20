@@ -4,7 +4,7 @@
 # Lab 10
 # Lab Section: 15
 # Sources, people worked with, help given to: 
-# 
+# Class notes
 
 #import modules you will need 
 
@@ -41,3 +41,7 @@ def get_hash(to_hash):
 # Hash each individual password and compare it against the stored hash.
 # - When you find the match, print the plaintext version of the password.
 # - End your loop.
+
+rockyou = Path('rockyou.txt')
+pws = rockyou.read_text()
+pw_list = pws.split('\n')
